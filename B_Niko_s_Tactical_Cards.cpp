@@ -23,7 +23,7 @@ int main()
         ll mx = 0, mn = 0;
         for (int i = 1; i <= n; ++i)
         {
-            ll new_mx = max(mx - a[i], b[i] - mn);
+            ll new_mx = max(mx - a[i], c);
             ll new_mn = min(mn - a[i], b[i] - mx);
             mx = new_mx, mn = new_mn;
         }
