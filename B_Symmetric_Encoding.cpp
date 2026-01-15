@@ -1,0 +1,58 @@
+#include <bits/stdc++.h>
+using namespace std;
+#include <iostream>
+#define ll long long
+#define newLine cout << "\n"
+#define pb push_back
+#define vi vector<int>
+#define Yes cout << "YES\n"
+#define No cout << "NO\n"
+#define array_input_int(a, o, n) \
+    for (int i = o; i < n; i++)  \
+    {                            \
+        cin >> (a[i]);           \
+    }
+
+void solve()
+{
+    int n;
+    cin >> n;
+    string b;
+    cin >> b;
+
+    vector<int> cnt(26, 0);
+    for (char c : b)
+    {
+        cnt[c - 'a'] = 1;
+    }
+
+    string tmp = "";
+    for (int i = 0; i < 26; i++)
+    {
+        if (cnt[i])
+        {
+            tmp.push_back(char('a' + i));
+        }
+    }
+
+    string a = "";
+    for (char c : b)
+    {
+        int pos = tmp.find(c);
+        a.push_back(tmp[tmp.size() - 1 - pos]);
+    }
+
+    cout << a << '\n';
+}
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        solve();
+    }
+    return 0;
+}
