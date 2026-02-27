@@ -15,15 +15,15 @@ using namespace std;
 
 void solve()
 {
-    int a, b, n;
-    cin >> a >> b >> n;
-    if (n - n % a + b <= n)
+    int a, b, x;
+    cin >> a >> b >> x;
+    if (x - x % a + b <= x)
     {
-        cout << n - n % a + b << endl;
+        cout << x - x % a + b << endl;
     }
     else
     {
-        cout << n - n % a - (a - b) << endl;
+        cout << x - x % a - (a - b) << endl;
     }
 }
 int main()
