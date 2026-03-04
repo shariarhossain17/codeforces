@@ -19,23 +19,21 @@ void solve()
     int n;
     cin >> n;
 
-    vi a(n);
+    vi v(n);
 
-    array_input_int(a, 0, n);
+    array_input_int(v, 0, n);
 
-    int ans = n - 1;
+    sort(v.begin(), v.end());
 
-    while (ans > 0 and a[ans - 1] >= a[ans])
+    for (int i = 1; i < n; i++)
     {
-        ans--;
+        if (v[i] - v[i - 1] > 1)
+        {
+            No;
+            return;
+        }
     }
-    while (ans > 0 and a[ans - 1] <= a[ans])
-    {
-        ans--;
-    }
-}
-
-cout << ans << endl;
+    Yes;
 }
 int main()
 {
